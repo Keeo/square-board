@@ -12,8 +12,8 @@ export default Ember.Route.extend({
     return models;
   },
   afterModel(model) {
-    setInterval(() => {
-      model[Math.floor((Math.random() * 32 * 32))].levelUp();
-    }, 16);
+    /*setInterval(() => {
+      model[Math.floor(Math.random() * 32 * 32)].levelUp();
+    }, 16);*/
   }
 });

@@ -4,14 +4,13 @@ const { alias } = Ember.computed;
 
 export default Ember.Component.extend({
   classNames: 'square',
-  classNameBindings: 'type',
+  classNameBindings: ['type', 'color'],
   type: alias('model.type'),
-
-  attributeBindings: 'style',
-  style: computed('model.backgroundColor', function() {
-    return `background-color: #${this.get('model.backgroundColor')};`.htmlSafe();
+  color: computed('model.level', function(){
+    return 'square-color-' + this.get('model.level');
   }),
   mouseEnter() {
+    console.log("called");
     this.get('model').levelUp();
   }
 });
