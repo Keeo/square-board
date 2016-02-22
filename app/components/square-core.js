@@ -10,7 +10,6 @@ export default Ember.Component.extend({
     return 'square-color-' + this.get('model.level');
   }),
   mouseEnter() {
-    console.log("called");
     this.get('model').levelUp();
   }
 });
